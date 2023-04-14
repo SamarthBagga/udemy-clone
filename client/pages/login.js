@@ -18,7 +18,7 @@ export default function login() {
   const handleLogin = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post("http://localhost:5000/api/user/login", {
+      const response = await axios.post("https://udemy-clone-eif7.onrender.com/api/user/login", {
         email,
         password,
       });

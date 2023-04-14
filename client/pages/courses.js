@@ -1,7 +1,6 @@
 import { Inter } from '@next/font/google'
 import Navbar from '../src/Navbar'
 import { ReactNebula, smallSolarSystem, bigSolarSystem } from "@flodlc/nebula";
-import { Card, CardContent, CardMedia, Typography } from '@mui/material';
 import { useState } from 'react';
 
 
@@ -61,11 +60,7 @@ const cards = [
 ];
 
 export default function courses() {
-    const [selectedOption, setSelectedOption] = useState(options[0]);
 
-  const handleClick = (option) => {
-    setSelectedOption(option);
-  };
 
   return (
     
@@ -85,39 +80,13 @@ export default function courses() {
       <div className='h-[10rem] stu flex items-center mx-auto'>
         <div className='h-[35rem] w-[70rem] rounded-3xl bg-white stu flex mx-auto p-6 flex-col items-center'>
             <h1 className='text-3xl font-semibold'>Explore Online Courses!</h1>
-            <div className="flex justify-center py-4">
-        {options.map((option, index) => (
-          <div
-            key={index}
-            className={`px-4 py-2 rounded-md ${selectedOption === option ? 'bg-blue-500 text-white' : 'bg-white text-gray-500 hover:bg-gray-200 cursor-pointer'}`}
-            onClick={() => handleClick(option)}
-          >
-            {option}
-          </div>
-        ))}
-      </div>
-      <div className="grid grid-cols-2 gap-4 p-4">
-        {cards
-          .filter((card) => card.option === selectedOption)
-          .map((card, index) => (
-            <Card key={index}>
-              <CardMedia
-                component="img"
-                height="200"
-                image={card.image}
-                alt={card.title}
-              />
-              <CardContent>
-                <Typography variant="h5" component="div">
-                  {card.title}
-                </Typography>
-                <Typography variant="subtitle1" color="text.secondary">
-                  {card.author}
-                </Typography>
-              </CardContent>
-            </Card>
-          ))}
-      </div>
+            <div className='flex'>
+              <button className='pill'>Features</button>
+              <button className='pill'>Music</button>
+              <button className='pill'>Drawing</button>
+              <button className='pill'>Painting</button>
+              <button className='pill'>Marketing</button>
+            </div>
 
 
 
